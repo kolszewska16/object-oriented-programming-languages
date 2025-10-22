@@ -4,7 +4,8 @@
 int main() {
 	std::string s1;
 	std::cout << "Provide a string: "; 
-	std::getline(std::cin, s1);
+//	std::getline(std::cin, s1);
+	std::cin >> s1;
 
 	std::string s2 = s1;
 	int n = s1.size();

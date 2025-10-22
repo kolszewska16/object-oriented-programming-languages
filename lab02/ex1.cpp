@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 
-int calculate_matrix(std::vector<std::vector<int>> arr) {
+int calculate_matrix(const std::vector<std::vector<int>> &arr) {
 	int sum {0};
 	int r = arr.size();
 	int c = arr[0].size();
@@ -26,6 +26,11 @@ int main() {
 	std::cin >> row;
 	std::cout << "Provide number of columns: ";
 	std::cin >> col;
+	
+	if(row <= 0 || col <= 0) {
+		std::cout << "Provided number of rows or columns is wrong" << std::endl;
+		return -1;
+	}
 
 	std::vector<std::vector<int>> matrix(row, std::vector<int>(col));
 
