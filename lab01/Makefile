@@ -1,18 +1,11 @@
 CXX = g++
 
-all: ex1 ex2 ex3 ex4
+OBJECTS = ex1 ex2 ex3 ex4
 
-ex1: ex1.cpp
-	g++ -o  ex1 ex1.cpp
+all: $(OBJECTS)
 
-ex2: ex2.cpp
-	g++ -o ex2 ex2.cpp
-
-ex3: ex3.cpp
-	g++ -o ex3 ex3.cpp
-
-ex4: ex4.cpp
-	g++ -o ex4 ex4.cpp
+$(OBJECTS):%:%.cpp
+	$(CXX) -o $@ $<
 
 clean:
-	rm ex1 ex2 ex3 ex4
+	rm $(OBJECTS)
