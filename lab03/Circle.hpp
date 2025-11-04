@@ -12,11 +12,11 @@ class Circle {
 		Circle(double r, double x, double y) : center(x, y) {
 			m_radius = new double;
 			
-			if(r >= 0.0) {
+			if(r > 0.0) {
 				*m_radius = r;
 			}
 			else {
-				*m_radius = 0.0;
+				std::cout << "ERROR! Invalid radius" << std::endl;
 			}
 		}
 
@@ -25,11 +25,11 @@ class Circle {
 		}
 
 		void setRadius(double r) {
-			if(r >= 0.0) {
+			if(r > 0.0) {
 				*m_radius = r;
 			}
 			else {
-				*m_radius = 0.0;
+				std::cout << "ERROR! Invalid radius" << std::endl;
 			}
 		}
 

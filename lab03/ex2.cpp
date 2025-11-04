@@ -7,17 +7,12 @@ class Student {
 		int m_age;
 
 	public:
-		Student() {
-			m_name = "unknow";
-			m_age = 0;
-		};
-
 		void setAge(int a) {
-			if(a < 0) {
-				std::cout << "ERROR! Invalid age" << std::endl;
+			if(a > 0) {
+				m_age = a;
 			}
 			else {
-				m_age = a;
+				std::cout << "ERROR! Invalid age" << std::endl;
 			}
 		}
 
@@ -26,11 +21,11 @@ class Student {
 		}
 
 		void setName(std::string n) {
-			if(n.size() == 0) {
-				std::cout << "ERROR! Invalid name" << std::endl;
+			if(!n.empty()) {
+				m_name = n;
 			}
 			else {
-				m_name = n;
+				std::cout << "ERROR! Invalid name" << std::endl;
 			}
 		}
 
@@ -39,7 +34,9 @@ class Student {
 		}
 
 		void introduce(void) const {
-			std::cout << "I'm " << m_name << ", I'm " << m_age << " years old student" << std::endl;
+			if(!m_name.empty() && m_age > 0) {
+				std::cout << "I'm " << m_name << ", I'm " << m_age << " years old student" << std::endl;
+			}
 		}
 };
 
@@ -50,7 +47,7 @@ int main() {
 	std::cout << "Provide a name: ";
 	std::getline(std::cin, name);
 	int age {0};
-	std::cout <<  "Provide an age: ";
+	std::cout << "Provide an age: ";
 	std::cin >> age;
 
 	student1.setName(name);
