@@ -32,7 +32,7 @@ Animal* chooseAnimal(int num) {
 
 int main() {
 	int num {0};
-	std::cout << "Provide a number: ";
+	std::cout << "Provide a number to choose an animal: ";
 	std::cin >> num;
 
 	Animal *myAnimal = chooseAnimal(num);
